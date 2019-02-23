@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6626446921BEC04E006D616E /* CADisplayLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6626446821BEC04E006D616E /* CADisplayLinkViewController.swift */; };
+		662868542221BA3300CE49D0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 662868532221BA3300CE49D0 /* Info.plist */; };
 		663F6F6A21EE45D000E1B965 /* StretchyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F6F6921EE45D000E1B965 /* StretchyCollectionViewController.swift */; };
 		663F6F6C21EE4FAE00E1B965 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F6F6B21EE4FAE00E1B965 /* CollectionHeaderView.swift */; };
 		663F6F6E21EE70AE00E1B965 /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F6F6D21EE70AE00E1B965 /* StretchyHeaderLayout.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		6626446821BEC04E006D616E /* CADisplayLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CADisplayLinkViewController.swift; sourceTree = "<group>"; };
+		662868532221BA3300CE49D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		663F6F6921EE45D000E1B965 /* StretchyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyCollectionViewController.swift; sourceTree = "<group>"; };
 		663F6F6B21EE4FAE00E1B965 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		663F6F6D21EE70AE00E1B965 /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
@@ -34,7 +36,6 @@
 		664F011C21ACD72900AD9BB2 /* CoreDataSetup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataSetup.xcdatamodel; sourceTree = "<group>"; };
 		664F011E21ACD72B00AD9BB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		664F012121ACD72B00AD9BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		664F012321ACD72B00AD9BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		664F012921ACDD1000AD9BB2 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		664F012A21ACDD1000AD9BB2 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		664F012D21ACDE0700AD9BB2 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
@@ -67,6 +68,14 @@
 				66A16DCD21BC607C00C510F1 /* FbLikeAnimationViewController.swift */,
 			);
 			path = FacebookLikePopup;
+			sourceTree = "<group>";
+		};
+		662868522221B99500CE49D0 /* CADisplayLinkAnimateLabel */ = {
+			isa = PBXGroup;
+			children = (
+				6626446821BEC04E006D616E /* CADisplayLinkViewController.swift */,
+			);
+			path = CADisplayLinkAnimateLabel;
 			sourceTree = "<group>";
 		};
 		663F6F6821EE457F00E1B965 /* StretchyHeaderCollectionView */ = {
@@ -102,14 +111,14 @@
 				664F011621ACD72900AD9BB2 /* MainViewController.swift */,
 				662868512221B84400CE49D0 /* FacebookLikePopup */,
 				662868502221B80000CE49D0 /* ChatBubbleTableView */,
-				6626446821BEC04E006D616E /* CADisplayLinkViewController.swift */,
+				662868522221B99500CE49D0 /* CADisplayLinkAnimateLabel */,
 				663F6F6821EE457F00E1B965 /* StretchyHeaderCollectionView */,
 				664F011E21ACD72B00AD9BB2 /* Assets.xcassets */,
 				664F012021ACD72B00AD9BB2 /* LaunchScreen.storyboard */,
 				664F012A21ACDD1000AD9BB2 /* User+CoreDataProperties.swift */,
 				664F012921ACDD1000AD9BB2 /* User+CoreDataClass.swift */,
-				664F012321ACD72B00AD9BB2 /* Info.plist */,
 				664F011B21ACD72900AD9BB2 /* CoreDataSetup.xcdatamodeld */,
+				662868532221BA3300CE49D0 /* Info.plist */,
 				664F012D21ACDE0700AD9BB2 /* PersistenceManager.swift */,
 			);
 			path = AppFunFeatures;
@@ -175,6 +184,7 @@
 			files = (
 				664F012221ACD72B00AD9BB2 /* LaunchScreen.storyboard in Resources */,
 				664F011F21ACD72B00AD9BB2 /* Assets.xcassets in Resources */,
+				662868542221BA3300CE49D0 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
