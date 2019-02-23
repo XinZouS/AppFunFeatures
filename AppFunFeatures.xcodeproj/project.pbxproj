@@ -76,6 +76,16 @@
 			path = CADisplayLinkAnimateLabel;
 			sourceTree = "<group>";
 		};
+		6628687E2221D23600CE49D0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				664F012A21ACDD1000AD9BB2 /* User+CoreDataProperties.swift */,
+				664F012921ACDD1000AD9BB2 /* User+CoreDataClass.swift */,
+				664F011B21ACD72900AD9BB2 /* CoreDataSetup.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		663F6F6821EE457F00E1B965 /* StretchyHeaderCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,12 +121,10 @@
 				662868502221B80000CE49D0 /* ChatBubbleTableView */,
 				662868522221B99500CE49D0 /* CADisplayLinkAnimateLabel */,
 				663F6F6821EE457F00E1B965 /* StretchyHeaderCollectionView */,
+				6628687E2221D23600CE49D0 /* CoreData */,
 				664F011E21ACD72B00AD9BB2 /* Assets.xcassets */,
 				664F012021ACD72B00AD9BB2 /* LaunchScreen.storyboard */,
-				664F012A21ACDD1000AD9BB2 /* User+CoreDataProperties.swift */,
-				664F012921ACDD1000AD9BB2 /* User+CoreDataClass.swift */,
 				662868552221BC7700CE49D0 /* Info.plist */,
-				664F011B21ACD72900AD9BB2 /* CoreDataSetup.xcdatamodeld */,
 				664F012D21ACDE0700AD9BB2 /* PersistenceManager.swift */,
 			);
 			path = AppFunFeatures;
