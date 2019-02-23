@@ -217,7 +217,8 @@ extension MainViewController {
     }
     
     @objc private func animateTransitButtonTapped() {
-        
+        let vc = AnimateTransitBaseViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
