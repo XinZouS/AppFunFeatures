@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
     let caDisplayLinkButton = UIButton()
     let chatBubblePageButton = UIButton()
     let stretchyPageButton = UIButton()
+    let animateTransPageButton = UIButton()
     
     let margin: CGFloat = 20
     let btnHeigh: CGFloat = 50
@@ -51,6 +52,18 @@ class MainViewController: UIViewController {
         
         // custom demos
         setupNavigationButtons()
+    }
+    
+    fileprivate func setupButtonUI(_ btn: UIButton, title: String, titleColor: UIColor, backgroundColor: UIColor) {
+        let atts = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+            NSAttributedString.Key.foregroundColor: titleColor
+        ]
+        let attStr = NSAttributedString(string: title, attributes: atts)
+        btn.setAttributedTitle(attStr, for: .normal)
+        btn.backgroundColor = backgroundColor
+        btn.layer.cornerRadius = 10
+        btn.clipsToBounds = true
     }
 }
 
@@ -130,20 +143,13 @@ extension MainViewController {
         setupCaDisplayLinkButton()
         setupChatBubblePageButton()
         setupStretchyCollectionButton()
+        setupAnimateTransitButton()
     }
     
-    // Fb Animation
+    //MARK: - Fb Animation
     private func setupFbLikePageButton() {
         fbLikeTappingPageButton.addTarget(self, action: #selector(fbLikeTapped), for: .touchUpInside)
-        let atts = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
-            NSAttributedString.Key.foregroundColor: UIColor.blue
-        ]
-        let attStr = NSAttributedString(string: "Go fb-like tapping page", attributes: atts)
-        fbLikeTappingPageButton.setAttributedTitle(attStr, for: .normal)
-        fbLikeTappingPageButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        fbLikeTappingPageButton.layer.cornerRadius = 10
-        fbLikeTappingPageButton.clipsToBounds = true
+        setupButtonUI(fbLikeTappingPageButton, title: "Go fb-like tapping page", titleColor: UIColor.blue, backgroundColor: #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1))
         
         self.view.addSubview(fbLikeTappingPageButton)
         let vs = view.safeAreaLayoutGuide
@@ -155,18 +161,10 @@ extension MainViewController {
         self.navigationController?.pushViewController(fbLikeAnimationVC, animated: true)
     }
     
-    // CADisplayLink
+    //MARK: - CADisplayLink
     private func setupCaDisplayLinkButton() {
         caDisplayLinkButton.addTarget(self, action: #selector(caDisplayTapped), for: .touchUpInside)
-        let atts = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
-            NSAttributedString.Key.foregroundColor: UIColor.orange
-        ]
-        let attStr = NSAttributedString(string: "Go CADisplayLink page", attributes: atts)
-        caDisplayLinkButton.setAttributedTitle(attStr, for: .normal)
-        caDisplayLinkButton.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-        caDisplayLinkButton.layer.cornerRadius = 10
-        caDisplayLinkButton.clipsToBounds = true
+        setupButtonUI(caDisplayLinkButton, title: "Go CADisplayLink page", titleColor: UIColor.orange, backgroundColor: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
         
         self.view.addSubview(caDisplayLinkButton)
         let vs = view.safeAreaLayoutGuide
@@ -178,19 +176,10 @@ extension MainViewController {
         self.navigationController?.pushViewController(caVC, animated: true)
     }
     
-    // Chat bubble tableView
+    //MARK: - Chat bubble tableView
     private func setupChatBubblePageButton() {
         chatBubblePageButton.addTarget(self, action: #selector(chatBubbleButtonTapped), for: .touchUpInside)
-        let buttonTitleColor = #colorLiteral(red: 0.01436066254, green: 0.579015544, blue: 0.07654116112, alpha: 1)
-        let atts = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
-            NSAttributedString.Key.foregroundColor: buttonTitleColor
-        ]
-        let attStr = NSAttributedString(string: "Go Chat Bubble Page", attributes: atts)
-        chatBubblePageButton.setAttributedTitle(attStr, for: .normal)
-        chatBubblePageButton.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-        chatBubblePageButton.layer.cornerRadius = 10
-        chatBubblePageButton.clipsToBounds = true
+        setupButtonUI(chatBubblePageButton, title: "Go Chat Bubble Page", titleColor: #colorLiteral(red: 0.01436066254, green: 0.579015544, blue: 0.07654116112, alpha: 1), backgroundColor:  #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1))
         
         let vs = view.safeAreaLayoutGuide
         self.view.addSubview(chatBubblePageButton)
@@ -202,19 +191,10 @@ extension MainViewController {
         self.navigationController?.pushViewController(cv, animated: true)
     }
     
-    // Stretchy Collection View
+    //MARK: - Stretchy Collection View
     private func setupStretchyCollectionButton() {
         stretchyPageButton.addTarget(self, action: #selector(stretchButtonTapped), for: .touchUpInside)
-        let titleColor = #colorLiteral(red: 0.1787040276, green: 0.7140341645, blue: 0.6097396378, alpha: 1)
-        let atts = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
-            NSAttributedString.Key.foregroundColor: titleColor
-        ]
-        let attStr = NSAttributedString(string: "Go Stretchy Collection View", attributes: atts)
-        stretchyPageButton.setAttributedTitle(attStr, for: .normal)
-        stretchyPageButton.backgroundColor = #colorLiteral(red: 0.7873243414, green: 0.9747681341, blue: 1, alpha: 1)
-        stretchyPageButton.layer.cornerRadius = 10
-        stretchyPageButton.clipsToBounds = true
+        setupButtonUI(stretchyPageButton, title: "Go Stretchy Collection View", titleColor: #colorLiteral(red: 0.1787040276, green: 0.7140341645, blue: 0.6097396378, alpha: 1), backgroundColor: #colorLiteral(red: 0.7873243414, green: 0.9747681341, blue: 1, alpha: 1))
         
         let vs = view.safeAreaLayoutGuide
         self.view.addSubview(stretchyPageButton)
@@ -226,6 +206,19 @@ extension MainViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    //MARK: - Animate Trnasition
+    private func setupAnimateTransitButton() {
+        animateTransPageButton.addTarget(self, action: #selector(animateTransitButtonTapped), for: .touchUpInside)
+        setupButtonUI(animateTransPageButton, title: "Animate Image Transition View", titleColor:  #colorLiteral(red: 0.5083335309, green: 0.3633212509, blue: 0.8074603303, alpha: 1), backgroundColor:  #colorLiteral(red: 0.7985388885, green: 0.8489709422, blue: 1, alpha: 1))
+        
+        let vs = view.safeAreaLayoutGuide
+        self.view.addSubview(animateTransPageButton)
+        animateTransPageButton.anchor(left: vs.leftAnchor, top: stretchyPageButton.bottomAnchor, right: vs.rightAnchor, bottom: nil, leftConstent: margin, topConstent: 10, rightConstent: margin, bottomConstent: 0, width: 0, height: btnHeigh)
+    }
+    
+    @objc private func animateTransitButtonTapped() {
+        
+    }
 }
 
 
