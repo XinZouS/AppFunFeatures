@@ -52,48 +52,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		662868502221B80000CE49D0 /* ChatBubbleTableView */ = {
+		662868502221B80000CE49D0 /* 02ChatBubbleTableView */ = {
 			isa = PBXGroup;
 			children = (
 				66CD402821C2B21000AB850B /* ChatBubbleTableViewController.swift */,
 			);
-			path = ChatBubbleTableView;
+			path = 02ChatBubbleTableView;
 			sourceTree = "<group>";
 		};
-		662868512221B84400CE49D0 /* FacebookLikePopup */ = {
+		662868512221B84400CE49D0 /* 01FacebookLikePopup */ = {
 			isa = PBXGroup;
 			children = (
 				66A16DCD21BC607C00C510F1 /* FbLikeAnimationViewController.swift */,
 			);
-			path = FacebookLikePopup;
+			path = 01FacebookLikePopup;
 			sourceTree = "<group>";
 		};
-		662868522221B99500CE49D0 /* CADisplayLinkAnimateLabel */ = {
+		662868522221B99500CE49D0 /* 03CADisplayLinkAnimateLabel */ = {
 			isa = PBXGroup;
 			children = (
 				6626446821BEC04E006D616E /* CADisplayLinkViewController.swift */,
 			);
-			path = CADisplayLinkAnimateLabel;
+			path = 03CADisplayLinkAnimateLabel;
 			sourceTree = "<group>";
 		};
-		6628687E2221D23600CE49D0 /* CoreData */ = {
+		6628687E2221D23600CE49D0 /* 05CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				664F012A21ACDD1000AD9BB2 /* User+CoreDataProperties.swift */,
 				664F012921ACDD1000AD9BB2 /* User+CoreDataClass.swift */,
 				664F011B21ACD72900AD9BB2 /* CoreDataSetup.xcdatamodeld */,
 			);
-			path = CoreData;
+			path = 05CoreData;
 			sourceTree = "<group>";
 		};
-		663F6F6821EE457F00E1B965 /* StretchyHeaderCollectionView */ = {
+		6628687F2221D2F300CE49D0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				664F012D21ACDE0700AD9BB2 /* PersistenceManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		663F6F6821EE457F00E1B965 /* 04StretchyHeaderCollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				663F6F6B21EE4FAE00E1B965 /* CollectionHeaderView.swift */,
 				663F6F6921EE45D000E1B965 /* StretchyCollectionViewController.swift */,
 				663F6F6D21EE70AE00E1B965 /* StretchyHeaderLayout.swift */,
 			);
-			path = StretchyHeaderCollectionView;
+			path = 04StretchyHeaderCollectionView;
 			sourceTree = "<group>";
 		};
 		664F010821ACD72900AD9BB2 = {
@@ -117,15 +125,15 @@
 			children = (
 				664F011421ACD72900AD9BB2 /* AppDelegate.swift */,
 				664F011621ACD72900AD9BB2 /* MainViewController.swift */,
-				662868512221B84400CE49D0 /* FacebookLikePopup */,
-				662868502221B80000CE49D0 /* ChatBubbleTableView */,
-				662868522221B99500CE49D0 /* CADisplayLinkAnimateLabel */,
-				663F6F6821EE457F00E1B965 /* StretchyHeaderCollectionView */,
-				6628687E2221D23600CE49D0 /* CoreData */,
+				662868512221B84400CE49D0 /* 01FacebookLikePopup */,
+				662868502221B80000CE49D0 /* 02ChatBubbleTableView */,
+				662868522221B99500CE49D0 /* 03CADisplayLinkAnimateLabel */,
+				663F6F6821EE457F00E1B965 /* 04StretchyHeaderCollectionView */,
+				6628687E2221D23600CE49D0 /* 05CoreData */,
+				6628687F2221D2F300CE49D0 /* Helpers */,
 				664F011E21ACD72B00AD9BB2 /* Assets.xcassets */,
 				664F012021ACD72B00AD9BB2 /* LaunchScreen.storyboard */,
 				662868552221BC7700CE49D0 /* Info.plist */,
-				664F012D21ACDE0700AD9BB2 /* PersistenceManager.swift */,
 			);
 			path = AppFunFeatures;
 			sourceTree = "<group>";
