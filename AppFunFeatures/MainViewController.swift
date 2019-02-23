@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  CoreDataSetup
 //
 //  Created by Xin Zou on 11/26/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     let persistenceManager: PersistenceManager = PersistenceManager.shared
     
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
 }
 
 // CoreData
-extension ViewController {
+extension MainViewController {
     
     func createUser() {
         let user = User(context: persistenceManager.context)
@@ -91,7 +91,7 @@ extension ViewController {
 
 
 /// for Advanced Animations
-extension ViewController {
+extension MainViewController {
     
     fileprivate func setupImageView() {
         self.view.addSubview(imageView)
