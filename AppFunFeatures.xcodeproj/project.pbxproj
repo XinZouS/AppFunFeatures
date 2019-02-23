@@ -21,6 +21,21 @@
 		6628687C2221D1CC00CE49D0 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 664F011E21ACD72B00AD9BB2 /* Assets.xcassets */; };
 		6628687D2221D1CC00CE49D0 /* LaunchScreen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 664F012021ACD72B00AD9BB2 /* LaunchScreen.storyboard */; };
 		662868822221EF1900CE49D0 /* AnimateTransitBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868812221EF1900CE49D0 /* AnimateTransitBaseViewController.swift */; };
+		662868842221F53F00CE49D0 /* PhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868832221F53F00CE49D0 /* PhotoBrowser.swift */; };
+		662868862221F5E400CE49D0 /* PhotoBrowserBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868852221F5E400CE49D0 /* PhotoBrowserBaseCell.swift */; };
+		662868882221F63800CE49D0 /* PhotoBrowserBaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868872221F63800CE49D0 /* PhotoBrowserBaseDelegate.swift */; };
+		6628688A2221F74F00CE49D0 /* PhotoBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868892221F74F00CE49D0 /* PhotoBrowserDelegate.swift */; };
+		6628688C2221F7CA00CE49D0 /* PhotoBrowserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628688B2221F7CA00CE49D0 /* PhotoBrowserDataSource.swift */; };
+		6628688E2221F7F300CE49D0 /* PhotoBrowserTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628688D2221F7F300CE49D0 /* PhotoBrowserTransitioningDelegate.swift */; };
+		662868922221FA0C00CE49D0 /* PhotoBrowserFadeTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868912221FA0C00CE49D0 /* PhotoBrowserFadeTransitioning.swift */; };
+		662868942221FAE700CE49D0 /* PhotoBroswerPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868932221FAE700CE49D0 /* PhotoBroswerPresentationController.swift */; };
+		662868962221FB1600CE49D0 /* PhotoBrowserTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868952221FB1600CE49D0 /* PhotoBrowserTransitioning.swift */; };
+		662868982221FB7000CE49D0 /* PhotoBrowserZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868972221FB7000CE49D0 /* PhotoBrowserZoomTransition.swift */; };
+		6628689B2221FC4F00CE49D0 /* PhotoBrowserFadeDismissingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628689A2221FC4F00CE49D0 /* PhotoBrowserFadeDismissingAnimator.swift */; };
+		6628689D2221FC8100CE49D0 /* PhotoBrowserFadePresentingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628689C2221FC8100CE49D0 /* PhotoBrowserFadePresentingAnimator.swift */; };
+		6628689F2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628689E2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift */; };
+		662868A12222037F00CE49D0 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868A02222037F00CE49D0 /* LocalDataSource.swift */; };
+		662868A32222052A00CE49D0 /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868A22222052A00CE49D0 /* Namespace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +43,21 @@
 		662868552221BC7700CE49D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6628685B2221C1FF00CE49D0 /* AppFunFeautres.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFunFeautres.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		662868812221EF1900CE49D0 /* AnimateTransitBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateTransitBaseViewController.swift; sourceTree = "<group>"; };
+		662868832221F53F00CE49D0 /* PhotoBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowser.swift; sourceTree = "<group>"; };
+		662868852221F5E400CE49D0 /* PhotoBrowserBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserBaseCell.swift; sourceTree = "<group>"; };
+		662868872221F63800CE49D0 /* PhotoBrowserBaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserBaseDelegate.swift; sourceTree = "<group>"; };
+		662868892221F74F00CE49D0 /* PhotoBrowserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserDelegate.swift; sourceTree = "<group>"; };
+		6628688B2221F7CA00CE49D0 /* PhotoBrowserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserDataSource.swift; sourceTree = "<group>"; };
+		6628688D2221F7F300CE49D0 /* PhotoBrowserTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserTransitioningDelegate.swift; sourceTree = "<group>"; };
+		662868912221FA0C00CE49D0 /* PhotoBrowserFadeTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserFadeTransitioning.swift; sourceTree = "<group>"; };
+		662868932221FAE700CE49D0 /* PhotoBroswerPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBroswerPresentationController.swift; sourceTree = "<group>"; };
+		662868952221FB1600CE49D0 /* PhotoBrowserTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserTransitioning.swift; sourceTree = "<group>"; };
+		662868972221FB7000CE49D0 /* PhotoBrowserZoomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserZoomTransition.swift; sourceTree = "<group>"; };
+		6628689A2221FC4F00CE49D0 /* PhotoBrowserFadeDismissingAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserFadeDismissingAnimator.swift; sourceTree = "<group>"; };
+		6628689C2221FC8100CE49D0 /* PhotoBrowserFadePresentingAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserFadePresentingAnimator.swift; sourceTree = "<group>"; };
+		6628689E2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserZoomAnimator.swift; sourceTree = "<group>"; };
+		662868A02222037F00CE49D0 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		662868A22222052A00CE49D0 /* Namespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
 		663F6F6921EE45D000E1B965 /* StretchyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyCollectionViewController.swift; sourceTree = "<group>"; };
 		663F6F6B21EE4FAE00E1B965 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		663F6F6D21EE70AE00E1B965 /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
@@ -100,8 +130,47 @@
 			isa = PBXGroup;
 			children = (
 				662868812221EF1900CE49D0 /* AnimateTransitBaseViewController.swift */,
+				662868832221F53F00CE49D0 /* PhotoBrowser.swift */,
+				662868852221F5E400CE49D0 /* PhotoBrowserBaseCell.swift */,
+				662868872221F63800CE49D0 /* PhotoBrowserBaseDelegate.swift */,
+				662868902221F9F800CE49D0 /* Transitions */,
+				662868992221FC3400CE49D0 /* Animator */,
+				6628688F2221F80A00CE49D0 /* Protocols */,
 			);
 			path = 06AnimateTransit;
+			sourceTree = "<group>";
+		};
+		6628688F2221F80A00CE49D0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				662868A22222052A00CE49D0 /* Namespace.swift */,
+				662868892221F74F00CE49D0 /* PhotoBrowserDelegate.swift */,
+				6628688B2221F7CA00CE49D0 /* PhotoBrowserDataSource.swift */,
+				6628688D2221F7F300CE49D0 /* PhotoBrowserTransitioningDelegate.swift */,
+				662868A02222037F00CE49D0 /* LocalDataSource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		662868902221F9F800CE49D0 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				662868912221FA0C00CE49D0 /* PhotoBrowserFadeTransitioning.swift */,
+				662868932221FAE700CE49D0 /* PhotoBroswerPresentationController.swift */,
+				662868952221FB1600CE49D0 /* PhotoBrowserTransitioning.swift */,
+				662868972221FB7000CE49D0 /* PhotoBrowserZoomTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		662868992221FC3400CE49D0 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				6628689A2221FC4F00CE49D0 /* PhotoBrowserFadeDismissingAnimator.swift */,
+				6628689C2221FC8100CE49D0 /* PhotoBrowserFadePresentingAnimator.swift */,
+				6628689E2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift */,
+			);
+			path = Animator;
 			sourceTree = "<group>";
 		};
 		663F6F6821EE457F00E1B965 /* 04StretchyHeaderCollectionView */ = {
@@ -219,17 +288,32 @@
 			files = (
 				6628687C2221D1CC00CE49D0 /* Assets.xcassets in Sources */,
 				662868822221EF1900CE49D0 /* AnimateTransitBaseViewController.swift in Sources */,
+				6628688A2221F74F00CE49D0 /* PhotoBrowserDelegate.swift in Sources */,
 				6628687D2221D1CC00CE49D0 /* LaunchScreen.storyboard in Sources */,
 				6628686F2221D18000CE49D0 /* FbLikeAnimationViewController.swift in Sources */,
 				662868702221D18000CE49D0 /* ChatBubbleTableViewController.swift in Sources */,
+				662868962221FB1600CE49D0 /* PhotoBrowserTransitioning.swift in Sources */,
+				6628689D2221FC8100CE49D0 /* PhotoBrowserFadePresentingAnimator.swift in Sources */,
+				662868842221F53F00CE49D0 /* PhotoBrowser.swift in Sources */,
+				662868942221FAE700CE49D0 /* PhotoBroswerPresentationController.swift in Sources */,
+				662868A12222037F00CE49D0 /* LocalDataSource.swift in Sources */,
+				6628688C2221F7CA00CE49D0 /* PhotoBrowserDataSource.swift in Sources */,
+				662868982221FB7000CE49D0 /* PhotoBrowserZoomTransition.swift in Sources */,
+				6628688E2221F7F300CE49D0 /* PhotoBrowserTransitioningDelegate.swift in Sources */,
 				662868712221D18000CE49D0 /* CADisplayLinkViewController.swift in Sources */,
 				662868722221D18000CE49D0 /* CollectionHeaderView.swift in Sources */,
 				662868732221D18000CE49D0 /* StretchyCollectionViewController.swift in Sources */,
+				6628689B2221FC4F00CE49D0 /* PhotoBrowserFadeDismissingAnimator.swift in Sources */,
 				662868742221D18000CE49D0 /* StretchyHeaderLayout.swift in Sources */,
+				6628689F2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift in Sources */,
+				662868A32222052A00CE49D0 /* Namespace.swift in Sources */,
+				662868922221FA0C00CE49D0 /* PhotoBrowserFadeTransitioning.swift in Sources */,
 				662868772221D18000CE49D0 /* User+CoreDataProperties.swift in Sources */,
 				662868782221D18000CE49D0 /* User+CoreDataClass.swift in Sources */,
 				6628687B2221D18000CE49D0 /* PersistenceManager.swift in Sources */,
 				6628686D2221D15E00CE49D0 /* AppDelegate.swift in Sources */,
+				662868862221F5E400CE49D0 /* PhotoBrowserBaseCell.swift in Sources */,
+				662868882221F63800CE49D0 /* PhotoBrowserBaseDelegate.swift in Sources */,
 				6628686E2221D15E00CE49D0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

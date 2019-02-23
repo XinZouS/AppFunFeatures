@@ -10,6 +10,7 @@ import UIKit
 
 class AnimateTransitBaseViewController: UIViewController {
     
+    let dataSource: [UIImage] = [ #imageLiteral(resourceName: "567-1")]
     let imageView = UIImageView()
     
     
@@ -34,7 +35,16 @@ class AnimateTransitBaseViewController: UIViewController {
     }
     
     @objc private func tapGestureResponder() {
-        print("==============")
+        let dataSource = LocalDataSource(numberOfItems: {
+            // 共有多少项
+            return self.dataSource.count
+        }, localImage: { index -> UIImage? in
+            // 每一项的图片对象
+            return self.dataSource[index]
+        })
+        
+        let pb = PhotoBrowser(dataSource: dataSource)
+        pb.show(currentTopVC: self, pageIndex: 0)
     }
     
 }
