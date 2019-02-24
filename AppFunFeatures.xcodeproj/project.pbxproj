@@ -131,8 +131,8 @@
 			children = (
 				662868812221EF1900CE49D0 /* AnimateTransitBaseViewController.swift */,
 				662868832221F53F00CE49D0 /* PhotoBrowser.swift */,
-				662868852221F5E400CE49D0 /* PhotoBrowserBaseCell.swift */,
 				662868872221F63800CE49D0 /* PhotoBrowserBaseDelegate.swift */,
+				662868852221F5E400CE49D0 /* PhotoBrowserBaseCell.swift */,
 				662868902221F9F800CE49D0 /* Transitions */,
 				662868992221FC3400CE49D0 /* Animator */,
 				6628688F2221F80A00CE49D0 /* Protocols */,
