@@ -42,8 +42,10 @@ class AnimateTransitBaseViewController: UIViewController {
             // 每一项的图片对象
             return self.dataSource[index]
         })
-        
-        let pb = PhotoBrowser(dataSource: dataSource)
+        let trans = PhotoBrowserZoomTransitioning { [unowned self] (browser, index, view) -> CGRect? in
+            return PhotoBrowserZoomTransitioning.resRect(oriRes: self.imageView, to: view)
+        }
+        let pb = PhotoBrowser(dataSource: dataSource, delegate: PhotoBrowserBaseDelegate(), transDelegate: trans)
         pb.show(currentTopVC: self, pageIndex: 0)
     }
     
