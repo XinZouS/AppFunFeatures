@@ -36,11 +36,15 @@
 		6628689F2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628689E2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift */; };
 		662868A12222037F00CE49D0 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868A02222037F00CE49D0 /* LocalDataSource.swift */; };
 		662868A32222052A00CE49D0 /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868A22222052A00CE49D0 /* Namespace.swift */; };
-		662868D82223538E00CE49D0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868D72223538E00CE49D0 /* TableViewController.swift */; };
+		662868D82223538E00CE49D0 /* PTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868D72223538E00CE49D0 /* PTTableViewController.swift */; };
 		662868DA222354C300CE49D0 /* PTTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868D9222354C300CE49D0 /* PTTableCell.swift */; };
 		662868DC2223553B00CE49D0 /* PTHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868DB2223553B00CE49D0 /* PTHelpers.swift */; };
 		662868DE2223559A00CE49D0 /* MovingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868DD2223559A00CE49D0 /* MovingView.swift */; };
 		662868E02223562600CE49D0 /* PTDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868DF2223562600CE49D0 /* PTDetailViewController.swift */; };
+		662868E32224336700CE49D0 /* ImagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868E22224336700CE49D0 /* ImagesTableViewController.swift */; };
+		662868E52224337E00CE49D0 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868E42224337E00CE49D0 /* ImageDetailViewController.swift */; };
+		662868E722243D7B00CE49D0 /* PTUIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868E622243D7B00CE49D0 /* PTUIView++.swift */; };
+		662868E922243DE300CE49D0 /* PTLayerAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868E822243DE300CE49D0 /* PTLayerAnimationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,11 +67,15 @@
 		6628689E2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserZoomAnimator.swift; sourceTree = "<group>"; };
 		662868A02222037F00CE49D0 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		662868A22222052A00CE49D0 /* Namespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
-		662868D72223538E00CE49D0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		662868D72223538E00CE49D0 /* PTTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTableViewController.swift; sourceTree = "<group>"; };
 		662868D9222354C300CE49D0 /* PTTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTableCell.swift; sourceTree = "<group>"; };
 		662868DB2223553B00CE49D0 /* PTHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTHelpers.swift; sourceTree = "<group>"; };
 		662868DD2223559A00CE49D0 /* MovingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingView.swift; sourceTree = "<group>"; };
 		662868DF2223562600CE49D0 /* PTDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTDetailViewController.swift; sourceTree = "<group>"; };
+		662868E22224336700CE49D0 /* ImagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTableViewController.swift; sourceTree = "<group>"; };
+		662868E42224337E00CE49D0 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		662868E622243D7B00CE49D0 /* PTUIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PTUIView++.swift"; sourceTree = "<group>"; };
+		662868E822243DE300CE49D0 /* PTLayerAnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLayerAnimationHelper.swift; sourceTree = "<group>"; };
 		663F6F6921EE45D000E1B965 /* StretchyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyCollectionViewController.swift; sourceTree = "<group>"; };
 		663F6F6B21EE4FAE00E1B965 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		663F6F6D21EE70AE00E1B965 /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
@@ -186,13 +194,25 @@
 		662868D62223536300CE49D0 /* 07TableViewAnimateTransit */ = {
 			isa = PBXGroup;
 			children = (
-				662868D72223538E00CE49D0 /* TableViewController.swift */,
-				662868D9222354C300CE49D0 /* PTTableCell.swift */,
-				662868DB2223553B00CE49D0 /* PTHelpers.swift */,
-				662868DD2223559A00CE49D0 /* MovingView.swift */,
-				662868DF2223562600CE49D0 /* PTDetailViewController.swift */,
+				662868E22224336700CE49D0 /* ImagesTableViewController.swift */,
+				662868E42224337E00CE49D0 /* ImageDetailViewController.swift */,
+				662868E1222432FC00CE49D0 /* BaseVCs */,
 			);
 			path = 07TableViewAnimateTransit;
+			sourceTree = "<group>";
+		};
+		662868E1222432FC00CE49D0 /* BaseVCs */ = {
+			isa = PBXGroup;
+			children = (
+				662868D72223538E00CE49D0 /* PTTableViewController.swift */,
+				662868D9222354C300CE49D0 /* PTTableCell.swift */,
+				662868DF2223562600CE49D0 /* PTDetailViewController.swift */,
+				662868DB2223553B00CE49D0 /* PTHelpers.swift */,
+				662868E622243D7B00CE49D0 /* PTUIView++.swift */,
+				662868DD2223559A00CE49D0 /* MovingView.swift */,
+				662868E822243DE300CE49D0 /* PTLayerAnimationHelper.swift */,
+			);
+			path = BaseVCs;
 			sourceTree = "<group>";
 		};
 		663F6F6821EE457F00E1B965 /* 04StretchyHeaderCollectionView */ = {
@@ -316,6 +336,7 @@
 				6628687D2221D1CC00CE49D0 /* LaunchScreen.storyboard in Sources */,
 				6628686F2221D18000CE49D0 /* FbLikeAnimationViewController.swift in Sources */,
 				662868702221D18000CE49D0 /* ChatBubbleTableViewController.swift in Sources */,
+				662868E52224337E00CE49D0 /* ImageDetailViewController.swift in Sources */,
 				662868962221FB1600CE49D0 /* PhotoBrowserTransitioning.swift in Sources */,
 				6628689D2221FC8100CE49D0 /* PhotoBrowserFadePresentingAnimator.swift in Sources */,
 				662868842221F53F00CE49D0 /* PhotoBrowser.swift in Sources */,
@@ -324,7 +345,7 @@
 				6628688C2221F7CA00CE49D0 /* PhotoBrowserDataSource.swift in Sources */,
 				662868E02223562600CE49D0 /* PTDetailViewController.swift in Sources */,
 				662868982221FB7000CE49D0 /* PhotoBrowserZoomTransition.swift in Sources */,
-				662868D82223538E00CE49D0 /* TableViewController.swift in Sources */,
+				662868D82223538E00CE49D0 /* PTTableViewController.swift in Sources */,
 				662868DE2223559A00CE49D0 /* MovingView.swift in Sources */,
 				6628688E2221F7F300CE49D0 /* PhotoBrowserTransitioningDelegate.swift in Sources */,
 				662868712221D18000CE49D0 /* CADisplayLinkViewController.swift in Sources */,
@@ -335,7 +356,10 @@
 				662868742221D18000CE49D0 /* StretchyHeaderLayout.swift in Sources */,
 				6628689F2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift in Sources */,
 				662868A32222052A00CE49D0 /* Namespace.swift in Sources */,
+				662868E32224336700CE49D0 /* ImagesTableViewController.swift in Sources */,
+				662868E922243DE300CE49D0 /* PTLayerAnimationHelper.swift in Sources */,
 				662868922221FA0C00CE49D0 /* PhotoBrowserFadeTransitioning.swift in Sources */,
+				662868E722243D7B00CE49D0 /* PTUIView++.swift in Sources */,
 				662868772221D18000CE49D0 /* User+CoreDataProperties.swift in Sources */,
 				662868782221D18000CE49D0 /* User+CoreDataClass.swift in Sources */,
 				6628687B2221D18000CE49D0 /* PersistenceManager.swift in Sources */,

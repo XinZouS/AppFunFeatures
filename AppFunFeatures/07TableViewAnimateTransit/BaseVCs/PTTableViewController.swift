@@ -8,48 +8,9 @@
 
 import UIKit
 
-class TableViewController: PTTableViewController {
-    
-    let items = [#imageLiteral(resourceName: "commanders_566x252"), #imageLiteral(resourceName: "wowsBkGnd02"), #imageLiteral(resourceName: "wowsBkGnd04"), #imageLiteral(resourceName: "wowsBkGnd03"), #imageLiteral(resourceName: "consumablesTitleImg"), #imageLiteral(resourceName: "map_titleImg_568x244"), #imageLiteral(resourceName: "wowsBkGnd01")]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tableView.register(ParallaxCell.self, forCellReuseIdentifier: ParallaxCell.cellIdentifier)
-    }
-    
-}
-extension TableViewController {
-    
-    public override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 100
-    }
-    
-    public override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let cell = cell as? ParallaxCell else { return }
-        
-        let index = indexPath.row % items.count
-        let title = "title name \(indexPath.row)"
-        if indexPath.row < items.count {
-            cell.setImage(items[indexPath.row], title: title)
-        }
-    }
-    
-    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ParallaxCell = tableView.getReusableCellWithIdentifier(indexPath: indexPath)
-        return cell
-    }
-    
-    public override func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
-        let vc = PTDetailViewController()
-        pushViewController(vc)
-    }
-}
-
-
 //
 // MARK: - The base viewController of the table
 //
-// import UIKit
 
 fileprivate func < <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
@@ -67,7 +28,7 @@ open class PTTableViewController: UITableViewController {
     
     internal var currentCell: ParallaxCell?
     
-    fileprivate var duration: Double = 0.8
+    fileprivate var duration: Double = 1.0 // original: 0.8
     fileprivate var currentTextLabel: MovingLabel?
 }
 
