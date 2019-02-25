@@ -36,6 +36,11 @@
 		6628689F2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628689E2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift */; };
 		662868A12222037F00CE49D0 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868A02222037F00CE49D0 /* LocalDataSource.swift */; };
 		662868A32222052A00CE49D0 /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868A22222052A00CE49D0 /* Namespace.swift */; };
+		662868D82223538E00CE49D0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868D72223538E00CE49D0 /* TableViewController.swift */; };
+		662868DA222354C300CE49D0 /* PTTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868D9222354C300CE49D0 /* PTTableCell.swift */; };
+		662868DC2223553B00CE49D0 /* PTHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868DB2223553B00CE49D0 /* PTHelpers.swift */; };
+		662868DE2223559A00CE49D0 /* MovingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868DD2223559A00CE49D0 /* MovingView.swift */; };
+		662868E02223562600CE49D0 /* PTDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868DF2223562600CE49D0 /* PTDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,11 @@
 		6628689E2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserZoomAnimator.swift; sourceTree = "<group>"; };
 		662868A02222037F00CE49D0 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		662868A22222052A00CE49D0 /* Namespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
+		662868D72223538E00CE49D0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		662868D9222354C300CE49D0 /* PTTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTableCell.swift; sourceTree = "<group>"; };
+		662868DB2223553B00CE49D0 /* PTHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTHelpers.swift; sourceTree = "<group>"; };
+		662868DD2223559A00CE49D0 /* MovingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingView.swift; sourceTree = "<group>"; };
+		662868DF2223562600CE49D0 /* PTDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTDetailViewController.swift; sourceTree = "<group>"; };
 		663F6F6921EE45D000E1B965 /* StretchyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyCollectionViewController.swift; sourceTree = "<group>"; };
 		663F6F6B21EE4FAE00E1B965 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		663F6F6D21EE70AE00E1B965 /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
@@ -173,6 +183,18 @@
 			path = Animator;
 			sourceTree = "<group>";
 		};
+		662868D62223536300CE49D0 /* 07TableViewAnimateTransit */ = {
+			isa = PBXGroup;
+			children = (
+				662868D72223538E00CE49D0 /* TableViewController.swift */,
+				662868D9222354C300CE49D0 /* PTTableCell.swift */,
+				662868DB2223553B00CE49D0 /* PTHelpers.swift */,
+				662868DD2223559A00CE49D0 /* MovingView.swift */,
+				662868DF2223562600CE49D0 /* PTDetailViewController.swift */,
+			);
+			path = 07TableViewAnimateTransit;
+			sourceTree = "<group>";
+		};
 		663F6F6821EE457F00E1B965 /* 04StretchyHeaderCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +232,7 @@
 				663F6F6821EE457F00E1B965 /* 04StretchyHeaderCollectionView */,
 				6628687E2221D23600CE49D0 /* 05CoreData */,
 				662868802221EED800CE49D0 /* 06AnimateTransit */,
+				662868D62223536300CE49D0 /* 07TableViewAnimateTransit */,
 				6628687F2221D2F300CE49D0 /* Helpers */,
 				664F011E21ACD72B00AD9BB2 /* Assets.xcassets */,
 				664F012021ACD72B00AD9BB2 /* LaunchScreen.storyboard */,
@@ -287,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6628687C2221D1CC00CE49D0 /* Assets.xcassets in Sources */,
+				662868DC2223553B00CE49D0 /* PTHelpers.swift in Sources */,
 				662868822221EF1900CE49D0 /* AnimateTransitBaseViewController.swift in Sources */,
 				6628688A2221F74F00CE49D0 /* PhotoBrowserDelegate.swift in Sources */,
 				6628687D2221D1CC00CE49D0 /* LaunchScreen.storyboard in Sources */,
@@ -298,11 +322,15 @@
 				662868942221FAE700CE49D0 /* PhotoBroswerPresentationController.swift in Sources */,
 				662868A12222037F00CE49D0 /* LocalDataSource.swift in Sources */,
 				6628688C2221F7CA00CE49D0 /* PhotoBrowserDataSource.swift in Sources */,
+				662868E02223562600CE49D0 /* PTDetailViewController.swift in Sources */,
 				662868982221FB7000CE49D0 /* PhotoBrowserZoomTransition.swift in Sources */,
+				662868D82223538E00CE49D0 /* TableViewController.swift in Sources */,
+				662868DE2223559A00CE49D0 /* MovingView.swift in Sources */,
 				6628688E2221F7F300CE49D0 /* PhotoBrowserTransitioningDelegate.swift in Sources */,
 				662868712221D18000CE49D0 /* CADisplayLinkViewController.swift in Sources */,
 				662868722221D18000CE49D0 /* CollectionHeaderView.swift in Sources */,
 				662868732221D18000CE49D0 /* StretchyCollectionViewController.swift in Sources */,
+				662868DA222354C300CE49D0 /* PTTableCell.swift in Sources */,
 				6628689B2221FC4F00CE49D0 /* PhotoBrowserFadeDismissingAnimator.swift in Sources */,
 				662868742221D18000CE49D0 /* StretchyHeaderLayout.swift in Sources */,
 				6628689F2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift in Sources */,

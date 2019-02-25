@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
     let chatBubblePageButton = UIButton()
     let stretchyPageButton = UIButton()
     let animateTransPageButton = UIButton()
+    let previewTransitPageButton = UIButton()
     
     let margin: CGFloat = 20
     let btnHeigh: CGFloat = 50
@@ -144,6 +145,7 @@ extension MainViewController {
         setupChatBubblePageButton()
         setupStretchyCollectionButton()
         setupAnimateTransitButton()
+        setupPreviewTransitButton()
     }
     
     //MARK: - Fb Animation
@@ -218,6 +220,18 @@ extension MainViewController {
     
     @objc private func animateTransitButtonTapped() {
         let vc = AnimateTransitBaseViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    //MARK: - PreviewTransition
+    
+    private func setupPreviewTransitButton() {
+        previewTransitPageButton.addTarget(self, action: #selector(previewTransitTapped), for: .touchUpInside)
+    }
+    
+    @objc private func previewTransitTapped() {
+        let vc = TableViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
