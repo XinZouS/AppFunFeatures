@@ -15,9 +15,23 @@ class ImagesTableViewController: PTTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
         self.tableView.register(ParallaxCell.self, forCellReuseIdentifier: ParallaxCell.cellIdentifier)
     }
     
+    fileprivate func configureNavigationBar() {
+        //transparent background
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = true
+        
+        if let font = UIFont(name: "Avenir-medium", size: 18) {
+            UINavigationBar.appearance().titleTextAttributes = [
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.font: font,
+            ]
+        }
+    }
 }
 extension ImagesTableViewController {
     
@@ -43,7 +57,7 @@ extension ImagesTableViewController {
     }
     
     public override func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
-        let vc = PTDetailViewController()
+        let vc = ImageDetailViewController()
         pushViewController(vc)
     }
     

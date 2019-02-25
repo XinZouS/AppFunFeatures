@@ -10,7 +10,7 @@ import UIKit
 
 public class ImageDetailViewController: PTDetailViewController {
     
-    fileprivate var controlBottomConstrant: NSLayoutConstraint!
+    fileprivate var controlBottomConstrant: NSLayoutConstraint?
     
     // bottom control icons
     fileprivate var controlsViewContainer = UIView()
@@ -54,7 +54,9 @@ extension ImageDetailViewController {
     private func setupControlViews() {
         let vs = view.safeAreaLayoutGuide
         view.addSubview(controlsViewContainer)
-        controlsViewContainer.anchor(left: vs.leftAnchor, top: nil, right: vs.rightAnchor, bottom: vs.bottomAnchor, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 66)
+        controlsViewContainer.anchor(left: vs.leftAnchor, top: nil, right: vs.rightAnchor, bottom: nil, leftConstent: 0, topConstent: 0, rightConstent: 0, bottomConstent: 0, width: 0, height: 66)
+        controlBottomConstrant = controlsViewContainer.bottomAnchor.constraint(equalTo: vs.bottomAnchor)
+        controlBottomConstrant?.isActive = true
         
         // ???
         controlsViewContainer.addSubview(controlView)
@@ -89,7 +91,7 @@ extension ImageDetailViewController {
     fileprivate func createBackButton() -> UIButton {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 22, height: 44))
         button.setImage(#imageLiteral(resourceName: "back"), for: .normal)
-        button.addTarget(self, action: #selector(ImageDetailViewController.backButtonHandler), for: .touchUpInside)
+        button.addTarget(self, action: #selector(backButtonHandler), for: .touchUpInside)
         return button
     }
     
@@ -143,10 +145,10 @@ extension ImageDetailViewController {
     
     fileprivate func moveUpControllerDuration(duration: Double) {
         
-        controlBottomConstrant.constant = -controlsViewContainer.bounds.height
+        controlBottomConstrant?.constant = -controlsViewContainer.bounds.height
         view.layoutIfNeeded()
         
-        controlBottomConstrant.constant = 0
+        controlBottomConstrant?.constant = 0
         UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)

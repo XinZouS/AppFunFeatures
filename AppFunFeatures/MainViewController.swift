@@ -247,7 +247,8 @@ extension MainViewController {
     
     @objc private func previewTransitTapped() {
         let vc = ImagesTableViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
     }
 }
 
