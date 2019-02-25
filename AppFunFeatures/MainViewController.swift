@@ -148,7 +148,9 @@ extension MainViewController {
         setupPreviewTransitButton()
     }
     
+    
     //MARK: - Fb Animation
+    
     private func setupFbLikePageButton() {
         fbLikeTappingPageButton.addTarget(self, action: #selector(fbLikeTapped), for: .touchUpInside)
         setupButtonUI(fbLikeTappingPageButton, title: "Go fb-like tapping page", titleColor: UIColor.blue, backgroundColor: #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1))
@@ -163,7 +165,9 @@ extension MainViewController {
         self.navigationController?.pushViewController(fbLikeAnimationVC, animated: true)
     }
     
+    
     //MARK: - CADisplayLink
+    
     private func setupCaDisplayLinkButton() {
         caDisplayLinkButton.addTarget(self, action: #selector(caDisplayTapped), for: .touchUpInside)
         setupButtonUI(caDisplayLinkButton, title: "Go CADisplayLink page", titleColor: UIColor.orange, backgroundColor: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
@@ -178,7 +182,9 @@ extension MainViewController {
         self.navigationController?.pushViewController(caVC, animated: true)
     }
     
+    
     //MARK: - Chat bubble tableView
+    
     private func setupChatBubblePageButton() {
         chatBubblePageButton.addTarget(self, action: #selector(chatBubbleButtonTapped), for: .touchUpInside)
         setupButtonUI(chatBubblePageButton, title: "Go Chat Bubble Page", titleColor: #colorLiteral(red: 0.01436066254, green: 0.579015544, blue: 0.07654116112, alpha: 1), backgroundColor:  #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1))
@@ -193,7 +199,9 @@ extension MainViewController {
         self.navigationController?.pushViewController(cv, animated: true)
     }
     
+    
     //MARK: - Stretchy Collection View
+    
     private func setupStretchyCollectionButton() {
         stretchyPageButton.addTarget(self, action: #selector(stretchButtonTapped), for: .touchUpInside)
         setupButtonUI(stretchyPageButton, title: "Go Stretchy Collection View", titleColor: #colorLiteral(red: 0.1787040276, green: 0.7140341645, blue: 0.6097396378, alpha: 1), backgroundColor: #colorLiteral(red: 0.7873243414, green: 0.9747681341, blue: 1, alpha: 1))
@@ -208,7 +216,9 @@ extension MainViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    
     //MARK: - Animate Trnasition
+    
     private func setupAnimateTransitButton() {
         animateTransPageButton.addTarget(self, action: #selector(animateTransitButtonTapped), for: .touchUpInside)
         setupButtonUI(animateTransPageButton, title: "Animate Image Transition View", titleColor:  #colorLiteral(red: 0.5083335309, green: 0.3633212509, blue: 0.8074603303, alpha: 1), backgroundColor:  #colorLiteral(red: 0.7985388885, green: 0.8489709422, blue: 1, alpha: 1))
@@ -228,6 +238,11 @@ extension MainViewController {
     
     private func setupPreviewTransitButton() {
         previewTransitPageButton.addTarget(self, action: #selector(previewTransitTapped), for: .touchUpInside)
+        setupButtonUI(previewTransitPageButton, title: "Preview Transit TableVC", titleColor:  #colorLiteral(red: 0.6615448133, green: 0.3673118929, blue: 0.8074603303, alpha: 1), backgroundColor:  #colorLiteral(red: 0.8897443573, green: 0.820095919, blue: 1, alpha: 1))
+        
+        let vs = view.safeAreaLayoutGuide
+        self.view.addSubview(previewTransitPageButton)
+        previewTransitPageButton.anchor(left: vs.leftAnchor, top: animateTransPageButton.bottomAnchor, right: vs.rightAnchor, bottom: nil, leftConstent: margin, topConstent: 10, rightConstent: margin, bottomConstent: 0, width: 0, height: btnHeigh)
     }
     
     @objc private func previewTransitTapped() {

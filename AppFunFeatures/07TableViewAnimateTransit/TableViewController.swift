@@ -14,6 +14,7 @@ class TableViewController: PTTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(ParallaxCell.self, forCellReuseIdentifier: ParallaxCell.cellIdentifier)
     }
     
 }

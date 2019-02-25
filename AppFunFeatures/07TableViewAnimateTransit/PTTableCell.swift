@@ -17,7 +17,9 @@ fileprivate struct C {
     }
 }
 
-/// UITableViewCell with parallax background
+
+/// MARK: - UITableViewCell with parallax background
+
 open class ParallaxCell: UITableViewCell {
     
     /// Custom separator view

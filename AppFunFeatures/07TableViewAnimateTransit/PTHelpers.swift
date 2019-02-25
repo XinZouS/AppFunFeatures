@@ -27,7 +27,7 @@ precedencegroup constOp {
 extension UITableView {
     func getReusableCellWithIdentifier<T: UITableViewCell>(indexPath: IndexPath) -> T {
         guard let cell = self.dequeueReusableCell(withIdentifier: T.cellIdentifier, for: indexPath as IndexPath) as? T else {
-            fatalError("Couldn't instantiate view controller with identifier \(T.cellIdentifier) ")
+            fatalError("[ERROR] Couldn't instantiate view controller with identifier \(T.cellIdentifier) ")
         }
         
         return cell
