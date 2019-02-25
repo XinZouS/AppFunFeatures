@@ -46,6 +46,10 @@ extension ImagesTableViewController {
         let vc = PTDetailViewController()
         pushViewController(vc)
     }
+    
+    public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
 }
 
 
