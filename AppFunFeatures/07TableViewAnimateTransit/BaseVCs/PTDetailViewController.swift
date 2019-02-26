@@ -15,7 +15,7 @@ open class PTDetailViewController: UIViewController {
     var titleText: String?
     
     /// 图片允许的最大放大倍率
-    open var imageMaximumZoomScale: CGFloat = 2.0
+    open var imageMaximumZoomScale: CGFloat = 6.0
     
     /// 单击时回调
     open var clickCallback: ((UITapGestureRecognizer) -> Void)?
@@ -25,14 +25,6 @@ open class PTDetailViewController: UIViewController {
     
     /// 图片拖动时回调
     open var panChangedCallback: ((_ scale: CGFloat) -> Void)?
-    
-    /// 图片拖动松手回调。isDown: 是否向下
-    open var panReleasedCallback: ((_ isDown: Bool) -> Void)?
-    
-    /// 是否需要添加长按手势。子类可重写本属性，返回`false`即可避免添加长按手势
-    open var isNeededLongPressGesture: Bool {
-        return true
-    }
     
     /// 记录pan手势开始时imageView的位置
     private var beganFrame = CGRect.zero
@@ -68,7 +60,17 @@ extension PTDetailViewController {
         }
         
         _ = createNavBar(UIColor(red: 0, green: 0, blue: 0, alpha: 0.5))
+        
+        layoutInitSubviews()
     }
+    
+    private func layoutInitSubviews() {
+        imageContainer.frame = view.frame
+        imageContainer.setZoomScale(1.0, animated: false)
+        backgroundImageView.frame = fitFrame
+        imageContainer.setZoomScale(1.0, animated: true)
+    }
+    
 }
 
 // MARK: public
@@ -110,7 +112,6 @@ extension PTDetailViewController {
         let viewH = UIScreen.main.bounds.height
         let imgH = viewH
         let imgW = (image.size.width / image.size.height) * imgH
-        print("\(imgW), \(imgH)")
         backgroundImageView.frame = CGRect(x: 0, y: 0, width: imgW, height: imgH)
         backgroundImageView.center = view.center
         backgroundImageView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
@@ -133,12 +134,6 @@ extension PTDetailViewController {
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(onClick(_:)))
         view.addGestureRecognizer(singleTap)
         singleTap.require(toFail: doubleTap)
-        
-        // 拖动手势
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(onPan(_:)))
-        pan.delegate = self
-        // 必须加在图片容器上。不能加在contentView上，否则长图下拉不能触发
-        imageContainer.addGestureRecognizer(pan)
     }
     
     fileprivate func createNavBar(_ color: UIColor) -> UIView {
@@ -174,56 +169,6 @@ extension PTDetailViewController {
 //
 
 extension PTDetailViewController {
-    
-    /// 响应拖动
-    @objc private func onPan(_ pan: UIPanGestureRecognizer) {
-        guard backgroundImageView.image != nil else {
-            return
-        }
-        switch pan.state {
-        case .began:
-            beganFrame = backgroundImageView.frame
-            beganTouch = pan.location(in: imageContainer)
-        case .changed:
-            let result = panResult(pan)
-            backgroundImageView.frame = result.0
-            panChangedCallback?(result.1)
-        case .ended, .cancelled:
-            backgroundImageView.frame = panResult(pan).0
-            let isDown = pan.velocity(in: self.view).y > 0
-            self.panReleasedCallback?(isDown)
-            if !isDown {
-                resetImageView()
-            }
-        default:
-            resetImageView()
-        }
-    }
-    
-    /// 计算拖动时图片应调整的frame和scale值
-    private func panResult(_ pan: UIPanGestureRecognizer) -> (CGRect, CGFloat) {
-        // 拖动偏移量
-        let translation = pan.translation(in: imageContainer)
-        let currentTouch = pan.location(in: imageContainer)
-        
-        // 由下拉的偏移值决定缩放比例，越往下偏移，缩得越小。scale值区间[0.3, 1.0]
-        let scale = min(1.0, max(0.3, 1 - translation.y / view.bounds.height))
-        
-        let width = beganFrame.size.width * scale
-        let height = beganFrame.size.height * scale
-        
-        // 计算x和y。保持手指在图片上的相对位置不变。
-        // 即如果手势开始时，手指在图片X轴三分之一处，那么在移动图片时，保持手指始终位于图片X轴的三分之一处
-        let xRate = (beganTouch.x - beganFrame.origin.x) / beganFrame.size.width
-        let currentTouchDeltaX = xRate * width
-        let x = currentTouch.x - currentTouchDeltaX
-        
-        let yRate = (beganTouch.y - beganFrame.origin.y) / beganFrame.size.height
-        let currentTouchDeltaY = yRate * height
-        let y = currentTouch.y - currentTouchDeltaY
-        
-        return (CGRect(x: x.isNaN ? 0 : x, y: y.isNaN ? 0 : y, width: width, height: height), scale)
-    }
     
     /// 响应单击
     @objc private func onClick(_ tap: UITapGestureRecognizer) {
@@ -266,19 +211,19 @@ extension PTDetailViewController: UIGestureRecognizerDelegate {
         guard let pan = gestureRecognizer as? UIPanGestureRecognizer else {
             return true
         }
-        let velocity = pan.velocity(in: self.view)
-        // 向上滑动时，不响应手势
-        if velocity.y < 0 {
-            return false
-        }
-        // 横向滑动时，不响应pan手势
-        if abs(Int(velocity.x)) > Int(velocity.y) {
-            return false
-        }
-        // 向下滑动，如果图片顶部超出可视区域，不响应手势
-        if imageContainer.contentOffset.y > 0 {
-            return false
-        }
+//        let velocity = pan.velocity(in: self.view)
+//        // 向上滑动时，不响应手势
+//        if velocity.y < 0 {
+//            return false
+//        }
+//        // 横向滑动时，不响应pan手势
+//        if abs(Int(velocity.x)) > Int(velocity.y) {
+//            return false
+//        }
+//        // 向下滑动，如果图片顶部超出可视区域，不响应手势
+//        if imageContainer.contentOffset.y > 0 {
+//            return false
+//        }
         // 响应允许范围内的下滑手势
         return true
     }
