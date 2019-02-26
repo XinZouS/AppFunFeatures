@@ -59,7 +59,7 @@ extension PTDetailViewController {
             }
         }
         
-        _ = createNavBar(UIColor(red: 0, green: 0, blue: 0, alpha: 0.5))
+        createNavBar(UIColor(red: 0, green: 0, blue: 0, alpha: 0.5))
         
         layoutInitSubviews()
     }
@@ -136,7 +136,7 @@ extension PTDetailViewController {
         singleTap.require(toFail: doubleTap)
     }
     
-    fileprivate func createNavBar(_ color: UIColor) -> UIView {
+    fileprivate func createNavBar(_ color: UIColor) {
         let navBar = UIView(frame: CGRect.zero)
         navBar.backgroundColor = color
         navBar.translatesAutoresizingMaskIntoConstraints = false
@@ -159,8 +159,6 @@ extension PTDetailViewController {
             $0.constant = constant
             return
         }
-        
-        return navBar
     }
 }
 
@@ -196,36 +194,6 @@ extension PTDetailViewController {
         if press.state == .began {
             longPressedCallback?(press)
         }
-    }
-    
-}
-
-//
-// MARK: - UIGestureRecognizerDelegate
-//
-
-extension PTDetailViewController: UIGestureRecognizerDelegate {
-    
-    open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        // 只响应pan手势
-        guard let pan = gestureRecognizer as? UIPanGestureRecognizer else {
-            return true
-        }
-//        let velocity = pan.velocity(in: self.view)
-//        // 向上滑动时，不响应手势
-//        if velocity.y < 0 {
-//            return false
-//        }
-//        // 横向滑动时，不响应pan手势
-//        if abs(Int(velocity.x)) > Int(velocity.y) {
-//            return false
-//        }
-//        // 向下滑动，如果图片顶部超出可视区域，不响应手势
-//        if imageContainer.contentOffset.y > 0 {
-//            return false
-//        }
-        // 响应允许范围内的下滑手势
-        return true
     }
     
 }
