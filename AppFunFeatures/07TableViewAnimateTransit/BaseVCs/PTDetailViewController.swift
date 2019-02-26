@@ -67,7 +67,7 @@ extension PTDetailViewController {
     private func layoutInitSubviews() {
         imageContainer.frame = view.frame
         imageContainer.setZoomScale(1.0, animated: false)
-        backgroundImageView.frame = fitFrame
+        backgroundImageView.frame = fillFrame
         imageContainer.setZoomScale(1.0, animated: true)
     }
     
@@ -222,51 +222,29 @@ extension PTDetailViewController: UIScrollViewDelegate {
                        y: imageContainer.contentSize.height * 0.5 + offsetY)
     }
     
-    /// 计算图片适合的size
-    private var fitSize: CGSize {
+    private var fillSize: CGSize {
         guard let image = backgroundImageView.image else {
             return CGSize.zero
         }
-        var width: CGFloat
-        var height: CGFloat
+        var imgW: CGFloat
+        var imgH: CGFloat
         if imageContainer.bounds.width < imageContainer.bounds.height {
-            // 竖屏
-            width = imageContainer.bounds.width
-            height = (image.size.height / image.size.width) * width
+            // portrait
+            imgH = imageContainer.bounds.height
+            imgW = (image.size.width / image.size.height) * imgH
         } else {
-            // 横屏
-            height = imageContainer.bounds.height
-            width = (image.size.width / image.size.height) * height
-            if width > imageContainer.bounds.width {
-                width = imageContainer.bounds.width
-                height = (image.size.height / image.size.width) * width
-            }
+            // landscape
+            imgW = imageContainer.bounds.width
+            imgH = (image.size.height / image.size.width) * imgW
         }
-        return CGSize(width: width, height: height)
+        return CGSize(width: imgW, height: imgH)
     }
     
-    /// 计算图片适合的frame
-    private var fitFrame: CGRect {
-        let size = fitSize
-        let y = imageContainer.bounds.height > size.height
-            ? (imageContainer.bounds.height - size.height) * 0.5 : 0
-        let x = imageContainer.bounds.width > size.width
-            ? (imageContainer.bounds.width - size.width) * 0.5 : 0
+    private var fillFrame: CGRect {
+        let size = fillSize
+        let x = imageContainer.bounds.width < size.width ? (imageContainer.bounds.width - size.width) * 0.5 : 0
+        let y = imageContainer.bounds.height < size.height ? (imageContainer.bounds.height - size.height) * 0.5 :0
         return CGRect(x: x, y: y, width: size.width, height: size.height)
-    }
-    
-    /// 复位ImageView
-    private func resetImageView() {
-        // 如果图片当前显示的size小于原size，则重置为原size
-        let size = fitSize
-        let needResetSize = backgroundImageView.bounds.size.width < size.width
-            || backgroundImageView.bounds.size.height < size.height
-        UIView.animate(withDuration: 0.25) {
-            self.backgroundImageView.center = self.resettingCenter
-            if needResetSize {
-                self.backgroundImageView.bounds.size = size
-            }
-        }
     }
     
 }
