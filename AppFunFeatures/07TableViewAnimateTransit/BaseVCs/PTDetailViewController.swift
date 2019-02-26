@@ -17,15 +17,6 @@ open class PTDetailViewController: UIViewController {
     /// 图片允许的最大放大倍率
     open var imageMaximumZoomScale: CGFloat = 6.0
     
-    /// 单击时回调
-    open var clickCallback: ((UITapGestureRecognizer) -> Void)?
-    
-    /// 长按时回调
-    open var longPressedCallback: ((UILongPressGestureRecognizer) -> Void)?
-    
-    /// 图片拖动时回调
-    open var panChangedCallback: ((_ scale: CGFloat) -> Void)?
-    
     /// 记录pan手势开始时imageView的位置
     private var beganFrame = CGRect.zero
     
@@ -170,7 +161,9 @@ extension PTDetailViewController {
     
     /// 响应单击
     @objc private func onClick(_ tap: UITapGestureRecognizer) {
-        clickCallback?(tap)
+        let currScale = imageContainer.zoomScale
+        let newScale = min(imageMaximumZoomScale, currScale * 1.5)
+        imageContainer.setZoomScale(newScale, animated: true)
     }
     
     /// 响应双击
@@ -192,7 +185,7 @@ extension PTDetailViewController {
     /// 响应长按
     @objc private func onLongPress(_ press: UILongPressGestureRecognizer) {
         if press.state == .began {
-            longPressedCallback?(press)
+            print("TODO: save image with longpress;")
         }
     }
     

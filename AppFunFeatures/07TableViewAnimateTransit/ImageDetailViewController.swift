@@ -48,7 +48,7 @@ extension ImageDetailViewController {
         showBackButtonDuration(duration: 0.3)
         showControlViewDuration(duration: 0.3)
         
-        _ = createBlurView()
+        setupBlurView()
     }
     
     private func setupControlViews() {
@@ -105,26 +105,15 @@ extension ImageDetailViewController {
         return buttonItem
     }
     
-    fileprivate func createBlurView() -> UIView {
+    fileprivate func setupBlurView() {
         let height = controlView.bounds.height + bottomSafeArea
-        let imageFrame = CGRect(x: 0, y: view.frame.size.height - height, width: view.frame.width, height: height)
-        let image = view.makeScreenShotFromFrame(frame: imageFrame)
-        let screnShotImageView = UIImageView(image: image)
-        screnShotImageView.blurViewValue(value: 5)
-        screnShotImageView.frame = controlsViewContainer.bounds
-        screnShotImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        controlsViewContainer.insertSubview(screnShotImageView, at: 0)
-        addOverlay(toView: screnShotImageView)
-        return screnShotImageView
+        let blurViewFrame = CGRect(x: 0, y: view.frame.size.height - height, width: view.frame.width, height: height)
+        let blurView = UIVisualEffectView(frame: blurViewFrame)
+        blurView.effect = UIBlurEffect(style: .dark)
+        controlsViewContainer.insertSubview(blurView, at: 0)
+        blurView.fillSuperview()
     }
     
-    fileprivate func addOverlay(toView view: UIView) {
-        let overlayView = UIView(frame: view.bounds)
-        overlayView.backgroundColor = .black
-        overlayView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        overlayView.alpha = 0.4
-        view.addSubview(overlayView)
-    }
 }
 
 // MARK: animations
