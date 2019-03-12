@@ -114,6 +114,7 @@ extension MainViewController {
         setupStretchyCollectionButton()
         setupAnimateTransitButton()
         setupPreviewTransitButton()
+        setupPropertyAnimateButton()
     }
     
     
