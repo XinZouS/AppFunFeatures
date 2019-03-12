@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     let animateTransPageButton = UIButton()
     let previewTransitPageButton = UIButton()
     let propertyAnimateButton = UIButton()
+    let swipeCellTableButton = UIButton()
     
     let margin: CGFloat = 10
     let btnHeigh: CGFloat = 50
@@ -115,6 +116,7 @@ extension MainViewController {
         setupAnimateTransitButton()
         setupPreviewTransitButton()
         setupPropertyAnimateButton()
+        setupSwipeCellTableButton()
     }
     
     
@@ -227,6 +229,20 @@ extension MainViewController {
     
     @objc private func propertyAnimateTapped() {
         let vc = PropertyAnimatorViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    private func setupSwipeCellTableButton() {
+        swipeCellTableButton.addTarget(self, action: #selector(swipeCellTapped), for: .touchUpInside)
+        setupButtonUI(swipeCellTableButton, title: "Swipe cell table", titleColor: #colorLiteral(red: 0.242115283, green: 0.307583593, blue: 0.8706282383, alpha: 1), backgroundColor: #colorLiteral(red: 0.6573312261, green: 0.9616645337, blue: 0.9764705896, alpha: 1))
+        
+        scrollView.addSubview(swipeCellTableButton)
+        swipeCellTableButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: propertyAnimateButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, topConstent: margin, height: btnHeigh)
+    }
+    
+    @objc private func swipeCellTapped() {
+        let vc = SwipCellTableViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
