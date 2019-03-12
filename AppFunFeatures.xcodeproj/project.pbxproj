@@ -44,6 +44,7 @@
 		662868E32224336700CE49D0 /* ImagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868E22224336700CE49D0 /* ImagesTableViewController.swift */; };
 		662868E52224337E00CE49D0 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868E42224337E00CE49D0 /* ImageDetailViewController.swift */; };
 		662868E922243DE300CE49D0 /* PTLayerAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868E822243DE300CE49D0 /* PTLayerAnimationHelper.swift */; };
+		664BFF382237FFD5008B4CE1 /* SwipCellTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664BFF372237FFD5008B4CE1 /* SwipCellTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		663F6F6921EE45D000E1B965 /* StretchyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyCollectionViewController.swift; sourceTree = "<group>"; };
 		663F6F6B21EE4FAE00E1B965 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		663F6F6D21EE70AE00E1B965 /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
+		664BFF372237FFD5008B4CE1 /* SwipCellTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipCellTableViewController.swift; sourceTree = "<group>"; };
 		664F011421ACD72900AD9BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		664F011621ACD72900AD9BB2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		664F011C21ACD72900AD9BB2 /* CoreDataSetup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataSetup.xcdatamodel; sourceTree = "<group>"; };
@@ -222,6 +224,14 @@
 			path = 04StretchyHeaderCollectionView;
 			sourceTree = "<group>";
 		};
+		664BFF362237FF8D008B4CE1 /* 08TableCellSwipActions */ = {
+			isa = PBXGroup;
+			children = (
+				664BFF372237FFD5008B4CE1 /* SwipCellTableViewController.swift */,
+			);
+			path = 08TableCellSwipActions;
+			sourceTree = "<group>";
+		};
 		664F010821ACD72900AD9BB2 = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +260,7 @@
 				6628687E2221D23600CE49D0 /* 05CoreData */,
 				662868802221EED800CE49D0 /* 06AnimateTransit */,
 				662868D62223536300CE49D0 /* 07TableViewAnimateTransit */,
+				664BFF362237FF8D008B4CE1 /* 08TableCellSwipActions */,
 				6628687F2221D2F300CE49D0 /* Helpers */,
 				664F011E21ACD72B00AD9BB2 /* Assets.xcassets */,
 				664F012021ACD72B00AD9BB2 /* LaunchScreen.storyboard */,
@@ -350,6 +361,7 @@
 				662868732221D18000CE49D0 /* StretchyCollectionViewController.swift in Sources */,
 				662868DA222354C300CE49D0 /* PTTableCell.swift in Sources */,
 				6628689B2221FC4F00CE49D0 /* PhotoBrowserFadeDismissingAnimator.swift in Sources */,
+				664BFF382237FFD5008B4CE1 /* SwipCellTableViewController.swift in Sources */,
 				662868742221D18000CE49D0 /* StretchyHeaderLayout.swift in Sources */,
 				6628689F2221FCA400CE49D0 /* PhotoBrowserZoomAnimator.swift in Sources */,
 				662868A32222052A00CE49D0 /* Namespace.swift in Sources */,
