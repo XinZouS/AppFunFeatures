@@ -24,8 +24,9 @@ class MainViewController: UIViewController {
     let stretchyPageButton = UIButton()
     let animateTransPageButton = UIButton()
     let previewTransitPageButton = UIButton()
+    let propertyAnimateButton = UIButton()
     
-    let margin: CGFloat = 20
+    let margin: CGFloat = 10
     let btnHeigh: CGFloat = 50
     var btnWidth: CGFloat = 160
     
@@ -200,7 +201,7 @@ extension MainViewController {
     
     private func setupPreviewTransitButton() {
         previewTransitPageButton.addTarget(self, action: #selector(previewTransitTapped), for: .touchUpInside)
-        setupButtonUI(previewTransitPageButton, title: "Preview Transit TableVC", titleColor:  #colorLiteral(red: 0.6615448133, green: 0.3673118929, blue: 0.8074603303, alpha: 1), backgroundColor:  #colorLiteral(red: 0.8897443573, green: 0.820095919, blue: 1, alpha: 1))
+        setupButtonUI(previewTransitPageButton, title: "Preview Transit TableVC", titleColor: #colorLiteral(red: 0.6615448133, green: 0.3673118929, blue: 0.8074603303, alpha: 1), backgroundColor: #colorLiteral(red: 0.8897443573, green: 0.820095919, blue: 1, alpha: 1))
         
         scrollView.addSubview(previewTransitPageButton)
         previewTransitPageButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: animateTransPageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, topConstent: margin, width: 0, height: btnHeigh)
@@ -210,6 +211,22 @@ extension MainViewController {
         let vc = ImagesTableViewController()
         let nav = UINavigationController(rootViewController: vc)
         self.present(nav, animated: true, completion: nil)
+    }
+    
+    
+    //MARK: - PropertyAnimate
+    
+    private func setupPropertyAnimateButton() {
+        propertyAnimateButton.addTarget(self, action: #selector(propertyAnimateTapped), for: .touchUpInside)
+        setupButtonUI(propertyAnimateButton, title: "Property Animate", titleColor: #colorLiteral(red: 0.7992227979, green: 0.4744390325, blue: 0.305837815, alpha: 1), backgroundColor: #colorLiteral(red: 0.9764705896, green: 0.8779596093, blue: 0.637214886, alpha: 1))
+        
+        scrollView.addSubview(propertyAnimateButton)
+        propertyAnimateButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: previewTransitPageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, topConstent: margin, width: 0, height: btnHeigh)
+    }
+    
+    @objc private func propertyAnimateTapped() {
+        let vc = PropertyAnimatorViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
