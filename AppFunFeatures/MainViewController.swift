@@ -219,7 +219,7 @@ extension MainViewController {
     
     private func setupPropertyAnimateButton() {
         propertyAnimateButton.addTarget(self, action: #selector(propertyAnimateTapped), for: .touchUpInside)
-        setupButtonUI(propertyAnimateButton, title: "Property Animate", titleColor: #colorLiteral(red: 0.7992227979, green: 0.4744390325, blue: 0.305837815, alpha: 1), backgroundColor: #colorLiteral(red: 0.9764705896, green: 0.8779596093, blue: 0.637214886, alpha: 1))
+        setupButtonUI(propertyAnimateButton, title: "Property Animate", titleColor: #colorLiteral(red: 0.4720128433, green: 0.2030949277, blue: 0.7992227979, alpha: 1), backgroundColor: #colorLiteral(red: 0.7821905623, green: 0.8675483755, blue: 0.9764705896, alpha: 1))
         
         scrollView.addSubview(propertyAnimateButton)
         propertyAnimateButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: previewTransitPageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, topConstent: margin, width: 0, height: btnHeigh)

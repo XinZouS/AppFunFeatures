@@ -25,6 +25,12 @@ class PropertyAnimatorViewController: UIViewController {
         setupAnimator()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        animator.stopAnimation(true)
+    }
+    
     fileprivate func setupImageView() {
         self.view.addSubview(imageView)
         imageView.anchorCenterIn(self.view, width: 200, height: 200)
