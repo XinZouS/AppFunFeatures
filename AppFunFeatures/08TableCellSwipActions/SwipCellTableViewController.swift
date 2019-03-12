@@ -10,6 +10,8 @@ import UIKit
 
 class SwipCellTableViewController: UIViewController {
     
+    let rows: [Int] = [1,2,3,4,5,6,7,8,9]
+    
     let tableView = UITableView()
     let cellId = "swipCellId"
     
@@ -20,6 +22,9 @@ class SwipCellTableViewController: UIViewController {
     
     
     private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(SwipCell.self, forCellReuseIdentifier: cellId)
         let vs = view.safeAreaLayoutGuide
         view.addSubview(tableView)
         tableView.anchor(left: vs.leftAnchor, top: vs.topAnchor, right: vs.rightAnchor, bottom: vs.bottomAnchor)
@@ -29,10 +34,38 @@ class SwipCellTableViewController: UIViewController {
     
 }
 
+extension SwipCellTableViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rows.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? SwipCell else {
+            return UITableViewCell()
+        }
+        cell.selectionStyle = .none
+        if indexPath.row < rows.count {
+            cell.titleLabel.text = "Row \(rows[indexPath.row])"
+        }
+        return cell
+    }
+    
+}
+
+extension SwipCellTableViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+}
+
 
 class SwipCell: UITableViewCell {
     
     let colorView = UIView()
+    let titleLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -48,6 +81,9 @@ class SwipCell: UITableViewCell {
         colorView.backgroundColor = .cyan
         addSubview(colorView)
         colorView.fillSuperview(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
+        
+        addSubview(titleLabel)
+        titleLabel.anchorCenterIn(self, width: 100, height: 20)
     }
     
 }
