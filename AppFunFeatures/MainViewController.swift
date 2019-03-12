@@ -139,7 +139,7 @@ extension MainViewController {
         setupButtonUI(caDisplayLinkButton, title: "Go CADisplayLink page", titleColor: UIColor.orange, backgroundColor: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
         
         scrollView.addSubview(caDisplayLinkButton)
-        caDisplayLinkButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: fbLikeTappingPageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, width: 0, height: btnHeigh)
+        caDisplayLinkButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: fbLikeTappingPageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, topConstent: margin, width: 0, height: btnHeigh)
     }
     
     @objc private func caDisplayTapped() {
@@ -155,7 +155,7 @@ extension MainViewController {
         setupButtonUI(chatBubblePageButton, title: "Go Chat Bubble Page", titleColor: #colorLiteral(red: 0.01436066254, green: 0.579015544, blue: 0.07654116112, alpha: 1), backgroundColor:  #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1))
         
         scrollView.addSubview(chatBubblePageButton)
-        chatBubblePageButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: caDisplayLinkButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, width: 0, height: btnHeigh)
+        chatBubblePageButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: caDisplayLinkButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, topConstent: margin, width: 0, height: btnHeigh)
     }
     
     @objc private func chatBubbleButtonTapped() {
@@ -171,7 +171,7 @@ extension MainViewController {
         setupButtonUI(stretchyPageButton, title: "Go Stretchy Collection View", titleColor: #colorLiteral(red: 0.1787040276, green: 0.7140341645, blue: 0.6097396378, alpha: 1), backgroundColor: #colorLiteral(red: 0.7873243414, green: 0.9747681341, blue: 1, alpha: 1))
         
         scrollView.addSubview(stretchyPageButton)
-        stretchyPageButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: chatBubblePageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, width: 0, height: btnHeigh)
+        stretchyPageButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: chatBubblePageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, topConstent: margin, width: 0, height: btnHeigh)
     }
     
     @objc private func stretchButtonTapped() {
@@ -187,7 +187,7 @@ extension MainViewController {
         setupButtonUI(animateTransPageButton, title: "Animate Image Transition View", titleColor:  #colorLiteral(red: 0.5083335309, green: 0.3633212509, blue: 0.8074603303, alpha: 1), backgroundColor:  #colorLiteral(red: 0.7985388885, green: 0.8489709422, blue: 1, alpha: 1))
         
         scrollView.addSubview(animateTransPageButton)
-        animateTransPageButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: stretchyPageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, width: 0, height: btnHeigh)
+        animateTransPageButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: stretchyPageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, topConstent: margin, width: 0, height: btnHeigh)
     }
     
     @objc private func animateTransitButtonTapped() {
@@ -203,7 +203,7 @@ extension MainViewController {
         setupButtonUI(previewTransitPageButton, title: "Preview Transit TableVC", titleColor:  #colorLiteral(red: 0.6615448133, green: 0.3673118929, blue: 0.8074603303, alpha: 1), backgroundColor:  #colorLiteral(red: 0.8897443573, green: 0.820095919, blue: 1, alpha: 1))
         
         scrollView.addSubview(previewTransitPageButton)
-        previewTransitPageButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: animateTransPageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, width: 0, height: btnHeigh)
+        previewTransitPageButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: animateTransPageButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, topConstent: margin, width: 0, height: btnHeigh)
     }
     
     @objc private func previewTransitTapped() {
