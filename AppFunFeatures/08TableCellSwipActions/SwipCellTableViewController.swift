@@ -10,13 +10,14 @@ import UIKit
 
 class SwipCellTableViewController: UIViewController {
     
-    let rows: [Int] = [1,2,3,4,5,6,7,8,9]
+    var rows: [Int] = [1,2,3,4,5,6,7,8,9]
     
     let tableView = UITableView()
     let cellId = "swipCellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setupTableView()
     }
     
@@ -56,7 +57,35 @@ extension SwipCellTableViewController: UITableViewDataSource {
 extension SwipCellTableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 160
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if indexPath.row < rows.count {
+            let r = rows[indexPath.row]
+            let delete = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] (action, view, actionPerformed: @escaping (Bool) -> Void) in
+                // ⭐️ actionPerformed:(Bool)->() is used for indicate that the row has been removed or not;
+                let alert = UIAlertController(title: "Delete row", message: "Are you sure to delete row \(r) ?", preferredStyle: .alert)
+                let yes = UIAlertAction(title: "Yes", style: .destructive, handler: { (alertAction) in
+                    // perform the deletaion for datasource and tableview:
+                    self.rows.remove(at: indexPath.row) // ⚠️ MUST remove datasource first, (for later table update)
+                    tableView.deleteRows(at: [indexPath], with: .automatic) // and then remove row, otherwise will crash!
+                    actionPerformed(true)
+                })
+                let no = UIAlertAction(title: "No", style: .cancel, handler: { (alertAction) in
+                    actionPerformed(false)
+                })
+                alert.addAction(yes)
+                alert.addAction(no)
+                self.present(alert, animated: true)
+            }
+            // optional setups:
+            delete.image = #imageLiteral(resourceName: "ShareIcon")
+            delete.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+            
+            return UISwipeActionsConfiguration(actions: [delete])
+        }
+        return nil
     }
     
 }
