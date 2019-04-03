@@ -16,7 +16,7 @@ class CircleProgressViewController: UIViewController {
     let layerOne = ProgressOneLayer()
     let layerTwo = ProgressTwoLayer()
     let layerThree = ProgressLayer()
-    let layerFour = ProgressLayer()
+    let layerFour = ProgressFourLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,6 +143,31 @@ class ProgressTwoLayer: ProgressLayer {
         ctx.closePath()
         // 完成绘制（填充）
         ctx.fillPath()
+    }
+    
+}
+
+
+
+class ProgressFourLayer: ProgressLayer {
+    
+    override func draw(in ctx: CGContext) {
+        let radius = frame.width * 0.45
+        let center = CGPoint(x: frame.width * 0.5, y: frame.height * 0.5)
+        let startAngle: CGFloat = -0.5 * CGFloat.pi
+        let endAngle:   CGFloat = -0.5 * CGFloat.pi + 2 * CGFloat.pi * number
+        
+        // draw the background gray circle
+        ctx.setStrokeColor(UIColor.lightGray.cgColor)
+        ctx.setLineWidth(radius * 0.07)
+        ctx.addEllipse(in: CGRect(x: frame.width * 0.05, y: frame.height * 0.05, width: frame.width * 0.9, height: frame.height * 0.9))
+        ctx.strokePath()
+        // then draw the arc upon it
+        ctx.setStrokeColor(UIColor.orange.cgColor)
+        ctx.setLineWidth(radius * 0.08)
+        ctx.setLineCap(CGLineCap.round)
+        ctx.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+        ctx.strokePath()
     }
     
 }
