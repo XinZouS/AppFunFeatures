@@ -46,6 +46,7 @@
 		662868E922243DE300CE49D0 /* PTLayerAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662868E822243DE300CE49D0 /* PTLayerAnimationHelper.swift */; };
 		664BFF382237FFD5008B4CE1 /* SwipCellTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664BFF372237FFD5008B4CE1 /* SwipCellTableViewController.swift */; };
 		664BFF3B223805DB008B4CE1 /* PropertyAnimatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664BFF3A223805DB008B4CE1 /* PropertyAnimatorViewController.swift */; };
+		66901C3822553EEF006297A9 /* CircleProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66901C3722553EEF006297A9 /* CircleProgressViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		664F012921ACDD1000AD9BB2 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		664F012A21ACDD1000AD9BB2 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		664F012D21ACDE0700AD9BB2 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		66901C3722553EEF006297A9 /* CircleProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressViewController.swift; sourceTree = "<group>"; };
 		66A16DCD21BC607C00C510F1 /* FbLikeAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbLikeAnimationViewController.swift; sourceTree = "<group>"; };
 		66CD402821C2B21000AB850B /* ChatBubbleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,12 +274,21 @@
 				662868802221EED800CE49D0 /* 06AnimateTransit */,
 				662868D62223536300CE49D0 /* 07TableViewAnimateTransit */,
 				664BFF362237FF8D008B4CE1 /* 08TableCellSwipActions */,
+				66901C3622553E50006297A9 /* 09CircleProgressBars */,
 				6628687F2221D2F300CE49D0 /* Helpers */,
 				664F011E21ACD72B00AD9BB2 /* Assets.xcassets */,
 				664F012021ACD72B00AD9BB2 /* LaunchScreen.storyboard */,
 				662868552221BC7700CE49D0 /* Info.plist */,
 			);
 			path = AppFunFeatures;
+			sourceTree = "<group>";
+		};
+		66901C3622553E50006297A9 /* 09CircleProgressBars */ = {
+			isa = PBXGroup;
+			children = (
+				66901C3722553EEF006297A9 /* CircleProgressViewController.swift */,
+			);
+			path = 09CircleProgressBars;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,6 +398,7 @@
 				662868862221F5E400CE49D0 /* PhotoBrowserBaseCell.swift in Sources */,
 				662868882221F63800CE49D0 /* PhotoBrowserBaseDelegate.swift in Sources */,
 				6628686E2221D15E00CE49D0 /* MainViewController.swift in Sources */,
+				66901C3822553EEF006297A9 /* CircleProgressViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
