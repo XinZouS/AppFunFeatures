@@ -152,6 +152,13 @@ class ProgressThreeLayer: ProgressLayer {
     override func draw(in ctx: CGContext) {
         let radius = frame.width * 0.45
         let center = CGPoint(x: frame.width * 0.5, y: frame.height * 0.5)
+        
+        // draw the background gray circle
+        ctx.setStrokeColor(UIColor.lightGray.cgColor)
+        ctx.setLineWidth(radius * 0.03)
+        ctx.addEllipse(in: CGRect(x: frame.width * 0.05, y: frame.height * 0.05, width: frame.width * 0.9, height: frame.height * 0.9))
+        ctx.strokePath()
+        
         // 6点是值0(0.5pi)，12点是1(1.5pi)，则右边为起点，从6点0.5pi开始向右上走: num*(1.5-0.5 pi)
         let startAngle: CGFloat = 0.5 * CGFloat.pi - number * CGFloat.pi
         // 终点是从0(0.5pi)向左上走，num*(1.5-0.5 pi)
