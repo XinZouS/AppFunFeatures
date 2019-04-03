@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
     let previewTransitPageButton = UIButton()
     let propertyAnimateButton = UIButton()
     let swipeCellTableButton = UIButton()
+    let circleProgressButton = UIButton()
     
     let margin: CGFloat = 10
     let btnHeigh: CGFloat = 50
@@ -117,6 +118,7 @@ extension MainViewController {
         setupPreviewTransitButton()
         setupPropertyAnimateButton()
         setupSwipeCellTableButton()
+        setupCircleProgressButton()
     }
     
     
@@ -232,6 +234,7 @@ extension MainViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    // MARK: - swipe cell table
     
     private func setupSwipeCellTableButton() {
         swipeCellTableButton.addTarget(self, action: #selector(swipeCellTapped), for: .touchUpInside)
@@ -245,6 +248,22 @@ extension MainViewController {
         let vc = SwipCellTableViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    // MARK: - Circle progress
+    
+    private func setupCircleProgressButton() {
+        circleProgressButton.addTarget(self, action: #selector(circleBarTapped), for: .touchUpInside)
+        setupButtonUI(circleProgressButton, title: "Circle Progressbar", titleColor: #colorLiteral(red: 0.1006424354, green: 0.6784093768, blue: 0.7105327073, alpha: 1), backgroundColor: #colorLiteral(red: 0.6975514021, green: 1, blue: 0.7073898844, alpha: 1))
+        
+        scrollView.addSubview(circleProgressButton)
+        circleProgressButton.anchor(left: fbLikeTappingPageButton.leftAnchor, top: swipeCellTableButton.bottomAnchor, right: fbLikeTappingPageButton.rightAnchor, bottom: nil, topConstent: margin, height: btnHeigh)
+    }
+
+    @objc private func circleBarTapped() {
+        let vc = CircleProgressViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 
