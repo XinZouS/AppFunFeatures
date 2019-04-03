@@ -13,8 +13,8 @@ class CircleProgressViewController: UIViewController {
     
     let slider = UISlider(frame: .zero)
     
-    let layerOne = ProgressLayer()
-    let layerTwo = ProgressLayer()
+    let layerOne = ProgressOneLayer()
+    let layerTwo = ProgressTwoLayer()
     let layerThree = ProgressLayer()
     let layerFour = ProgressLayer()
     
@@ -46,10 +46,10 @@ class CircleProgressViewController: UIViewController {
     }
     
     @objc private func sliderValueChanged() {
-        layerOne.number = Double(slider.value)
-        layerTwo.number = Double(slider.value)
-        layerThree.number = Double(slider.value)
-        layerFour.number = Double(slider.value)
+        layerOne.number = CGFloat(slider.value)
+        layerTwo.number = CGFloat(slider.value)
+        layerThree.number = CGFloat(slider.value)
+        layerFour.number = CGFloat(slider.value)
     }
     
 }
@@ -57,10 +57,11 @@ class CircleProgressViewController: UIViewController {
 // 圆形进度条的父类，用于显示百分比文本
 class ProgressLayer: CALayer {
     
-    var number: Double = 0.0 {
+    var number: CGFloat = 0.0 {
         didSet {
             txtLayer.string = String(format: "%.01f%%", number * 100) // show 66.6%
             txtLayer.setNeedsDisplay()
+            self.setNeedsDisplay() // 重绘txt和自己的环
         }
     }
     
@@ -73,9 +74,11 @@ class ProgressLayer: CALayer {
         l.alignmentMode = CATextLayerAlignmentMode.center
         l.contentsScale = UIScreen.main.scale
         l.isWrapped = true
-        l.string = ""
+        l.string = "0.0%"
         return l
     }()
+    
+    // MARK: - init
     
     override init() {
         super.init()
@@ -90,6 +93,8 @@ class ProgressLayer: CALayer {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - layout contents
+    
     override func layoutSublayers() {
         super.layoutSublayers()
         
@@ -98,4 +103,46 @@ class ProgressLayer: CALayer {
         
         txtLayer.frame = CGRect(x: 0, y: frame.height * 0.5 - tH * 0.5, width: frame.width, height: tH)
     }
+}
+
+// MARK: - different types of Circle bar
+
+class ProgressOneLayer: ProgressLayer {
+    
+    override func draw(in ctx: CGContext) {
+        let radius = frame.width * 0.45
+        let center = CGPoint(x: frame.width * 0.5, y: frame.height * 0.5)
+        let startAngle: CGFloat = -0.5 * CGFloat.pi
+        let endAngle:   CGFloat = -0.5 * CGFloat.pi + 2 * CGFloat.pi * number
+            
+        ctx.setStrokeColor(UIColor.cyan.cgColor)
+        ctx.setLineWidth(radius * 0.08)
+        ctx.setLineCap(CGLineCap.round)
+        ctx.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+        ctx.strokePath()
+    }
+    
+}
+
+class ProgressTwoLayer: ProgressLayer {
+    
+    override func draw(in ctx: CGContext) {
+        let radius = frame.width * 0.45
+        let center = CGPoint(x: frame.width * 0.5, y: frame.height * 0.5)
+        let startAngle: CGFloat = -0.5 * CGFloat.pi
+        let endAngle:   CGFloat = -0.5 * CGFloat.pi + 2 * CGFloat.pi * number
+        
+        ctx.setFillColor(UIColor.yellow.cgColor)
+        
+        // 先画圆心到12点位置的直线（不然会填充错误）
+        ctx.move(to: center)
+        ctx.addLine(to: CGPoint(x: center.x, y: frame.height * 0.05))
+        // 再画圆弧
+        ctx.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+        // 再闭合图形
+        ctx.closePath()
+        // 完成绘制（填充）
+        ctx.fillPath()
+    }
+    
 }
