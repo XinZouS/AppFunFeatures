@@ -15,7 +15,7 @@ class CircleProgressViewController: UIViewController {
     
     let layerOne = ProgressOneLayer()
     let layerTwo = ProgressTwoLayer()
-    let layerThree = ProgressLayer()
+    let layerThree = ProgressThreeLayer()
     let layerFour = ProgressFourLayer()
     
     override func viewDidLoad() {
@@ -147,7 +147,23 @@ class ProgressTwoLayer: ProgressLayer {
     
 }
 
-
+class ProgressThreeLayer: ProgressLayer {
+    
+    override func draw(in ctx: CGContext) {
+        let radius = frame.width * 0.45
+        let center = CGPoint(x: frame.width * 0.5, y: frame.height * 0.5)
+        // 6点是值0(0.5pi)，12点是1(1.5pi)，则右边为起点，从6点0.5pi开始向右上走: num*(1.5-0.5 pi)
+        let startAngle: CGFloat = 0.5 * CGFloat.pi - number * CGFloat.pi
+        // 终点是从0(0.5pi)向左上走，num*(1.5-0.5 pi)
+        let endAngle:   CGFloat = 0.5 * CGFloat.pi + number * CGFloat.pi
+        
+        ctx.setFillColor(UIColor.green.cgColor)
+        
+        ctx.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+        ctx.fillPath()
+    }
+    
+}
 
 class ProgressFourLayer: ProgressLayer {
     
